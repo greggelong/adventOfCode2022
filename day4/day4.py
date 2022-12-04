@@ -19,28 +19,29 @@ for pair in pairs:
     range1 = splitpair[0].split('-')
     range2 = splitpair[1].split('-')
     #print(splitpair, range1,range2)
-    '''
-    ## create strings of ranges
-    stringA=""
-    stringB=""
+    
+    ## create list of ranges
+    listA =[]
+    listB=[]
     for n in range(int(range1[0]),int(range1[1])+1):
-        stringA+=str(n)
+        listA.append(str(n))
     for n in range(int(range2[0]),int(range2[1])+1):
-        stringB+=str(n)
-    print(stringA)
-    print(stringB)
-    ## check if a substring
-    if stringA in stringB or stringB in stringA:
+        listB.append(str(n))
+    #print(listA)
+    #print(listB)
+    ## check if a substring using all
+    if all(x in listA for x in listB) or all(x in listB for x in listA):
         total+=1
-        print(total)
-    ''' # sub string does not work
+        #print(total)
+    ''' # sets not working 
     ## will try sets 
     if set(range(int(range1[0]), int(range1[1]))).issubset(range(int(range2[0]), int(range2[1]))) or set(range(int(range2[0]), int(range2[1]))).issubset(range(int(range1[0]), int(range1[1]))) :
         total+=1
-        print(splitpair, range1,range2)
+        print(total,splitpair, range1,range2)
         #print(range(int(range1[0]), int(range1[1])), (range(int(range2[0]), int(range2[1]))))
-        print("bing")
+        #print("bing")
 
     #print(range(int(range1[0]), int(range1[1])), (range(int(range2[0]), int(range2[1]))))
-
+    '''
 print(total)
+
