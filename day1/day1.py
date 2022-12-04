@@ -45,3 +45,24 @@ for key, value in elves.items():
 
 print("key value items: ", myelf, most) # dont need 
 
+## part 2
+
+## make a dict with summed values
+
+sumelves = {k:sum(v) for k,v in elves.items()  }
+
+#print(sumelves)
+
+# get values as a list
+sumCalList = list(sumelves.values())
+
+#print(sumCalList)
+# sort that list from most to least
+sumCalList.sort(reverse=True)
+
+#print(sumCalList)
+
+# total the top 3
+total = sumCalList[0]+sumCalList[1]+sumCalList[2]
+
+print("top three elves", total)
