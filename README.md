@@ -4,5 +4,6 @@ I am starting a couple days late.
 
 trying to catch up
 
-[X] day one
-[X] day two
+-[X] day one
+
+-[X] day two
