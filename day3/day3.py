@@ -16,6 +16,9 @@ priority =list(priorityStr)
 #print(priority)
 #print(priority.index('p'))
 
+
+## part 1
+
 total = 0
 for sack in sacks:
     # split sacks in half
@@ -29,8 +32,26 @@ for sack in sacks:
         if item in sack2:
             #if in sack to add the priority
             total= total+ priority.index(item)
-            print(item)
+            #print(item)
             break ## only need to find 1
 
 print(total)
+
+
+# part 2
+total =0
+for i in range(0,len(sacks),3):
+    sack1 = list(sacks[i])
+    sack2 = list(sacks[i+1])
+    sack3 = list(sacks[i+2])
+    #print(sack1)
+    #print(sack2)
+    #print(sack3)
+    for item in sack1:
+        if item in sack2 and item in sack3:
+            total=total+priority.index(item)
+            #print(item)
+            break
+
+print(total) 
 
