@@ -10,7 +10,8 @@ pairs = [pair.rstrip('\n') for pair in dpairs]
 
 #print(pairs)
 
-total =0 ## to hold pairs that fully conatain each other 
+totalcontain =0 ## to hold pairs that fully conatain each other 
+totaloverlap =0
 for pair in pairs:
     # split pairs
     splitpair = pair.split(',')
@@ -29,10 +30,12 @@ for pair in pairs:
         listB.append(str(n))
     #print(listA)
     #print(listB)
-    ## check if a substring using all
+    ## check if a subrange using all and any for overlap
     if all(x in listA for x in listB) or all(x in listB for x in listA):
-        total+=1
+        totalcontain+=1
         #print(total)
+    if any(x in listA for x in listB) or any(x in listA for x in listB):
+        totaloverlap+=1
     ''' # sets not working 
     ## will try sets 
     if set(range(int(range1[0]), int(range1[1]))).issubset(range(int(range2[0]), int(range2[1]))) or set(range(int(range2[0]), int(range2[1]))).issubset(range(int(range1[0]), int(range1[1]))) :
@@ -43,5 +46,6 @@ for pair in pairs:
 
     #print(range(int(range1[0]), int(range1[1])), (range(int(range2[0]), int(range2[1]))))
     '''
-print(total)
+print("total contain",totalcontain)
+print("total overlap",totaloverlap)
 
