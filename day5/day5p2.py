@@ -20,10 +20,10 @@ bigStack =[[],['R','P','C','D','B','G'],['H','V','G'],['N','S','Q','D','J','P','
 
 
 def make_move(stacks,nt,fs,ts):
-    '''stack 2d lists, number of moves, from stack, to stack'''
+    '''stack 2d lists, number of moves, from stack, to stack this time using string slicing and extend '''
     take = stacks[fs][len(stacks[fs])-nt:] ## get the number of boxes off the stack
     del stacks[fs][len(stacks[fs])-nt:]  ## delete those
-    stacks[ts].extend(take)   ## extend dont append them to the to stack
+    stacks[ts].extend(take)   ## extend the lists don't append them to the to stack you will get many nested 
     #print(smallStack)
 
 
