@@ -49,3 +49,7 @@ for pair in pairs:
 print("total contain",totalcontain)
 print("total overlap",totaloverlap)
 
+## my first try was making a string of the numbers instead of a list but ran in to trouble because
+## the range 2-3  would be identical to to the range 23-23 like that
+## but it could have been solved with adding a character to the string such as a "." so 2.3. would be different from 23.
+
