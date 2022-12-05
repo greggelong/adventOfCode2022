@@ -2,8 +2,11 @@
 
 I am starting a couple days late.
 
-trying to catch up
+I have caught up by December 4th
+let's see if I can keep it up.
+
 
 - [X] day one
 - [X] day two
 - [X] day three
+- [X] day four
