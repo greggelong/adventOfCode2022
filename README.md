@@ -1,5 +1,7 @@
 ## a place to hold some code for Advent of code 2022
 
+https://adventofcode.com/2022
+
 I am starting a couple days late.
 
 I have caught up by December 4th
