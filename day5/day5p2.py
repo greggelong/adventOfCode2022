@@ -1,6 +1,6 @@
 localpath="C:/Users/gkrei/Documents/adventOfCode2022/day5"
 
-with open(localpath+'/data.txt') as f:
+with open(localpath+'/sdata.txt') as f:
     dinstr= f.readlines()
 
 #import dirty sacks dsacks and then strip \n  to get clean
@@ -11,7 +11,7 @@ instr= [instr.rstrip('\n') for instr in dinstr]
 
 #print(instr)
 
-# part 1
+# part 2
 
 
 smallStack = [[],['Z','N'],['M','C','D'],['P']]
@@ -21,10 +21,10 @@ bigStack =[[],['R','P','C','D','B','G'],['H','V','G'],['N','S','Q','D','J','P','
 
 def make_move(stacks,nt,fs,ts):
     '''stack 2d lists, number of moves, from stack, to stack'''
-    for _ in range(nt):
-       take = stacks[fs].pop()
-       stacks[ts].append(take)
-       #print(smallStack)
+    take = stacks[fs][len(stacks[fs])-nt:] ## get the number of boxes off the stack
+    del stacks[fs][len(stacks[fs])-nt:]  ## delete those
+    stacks[ts].append(take)   ## append them to the to stack
+    #print(smallStack)
 
 
 for item in instr:
@@ -33,12 +33,12 @@ for item in instr:
     nTimes = int(instrL[1])
     fromStack = int(instrL[3])
     toStack = int(instrL[5])
-    make_move(bigStack,nTimes,fromStack,toStack)
+    make_move(smallStack,nTimes,fromStack,toStack)
 
 #print(bigStack[1][-1],bigStack[2][-1],bigStack[3][-1])
 
-for i in range(1,len(bigStack)):
-    print(i,bigStack[i][-1])
+for i in range(1,len(smallStack)):
+    print(i,smallStack[i][-1])
 
 
 # part 2 special crane moves more  reset 
