@@ -14,4 +14,4 @@ let's see if I can keep it up.
 - [X] day four
 
 - [X] day five
-
+- [X] day six -- this time I used set() see comments 
