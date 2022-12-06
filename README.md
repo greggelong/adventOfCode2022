@@ -16,4 +16,4 @@ really hacky solutions in python
 - [X] day four -- tried using strings but ran into edge case problems, then sets, finally used lists and all() and any() to find lists that contain each other or overlap
 
 - [X] day five -- made something like a simple interpreter to execute movement commands on  2d stacks of boxes, nested lists as stacks
-- [X] day six -- this time I used set() to check for no repeats in a list
+- [X] day six -- this time I used set() to check for no repeats in a list - of 4 or 14 characters 
