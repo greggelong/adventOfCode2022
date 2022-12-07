@@ -1,6 +1,8 @@
 
 # for part one I dont think i need recursion
 
+## oh no directorys at different levels have the same names a dictiona
+
 localpath="C:/Users/gkrei/Documents/adventOfCode2022/day7"
 
 with open(localpath+'/sdata.txt') as f:
@@ -58,11 +60,11 @@ print(dirdict)
 
 ## find witch directories are in in other directories
 collapseTotals =[]
+collapse =[]
 for d in dirlist:
-    total = dirdict[d]
+    total = [d]
+    total1 =dirdict[d]
     ## put in totals:
-    
-    
     for item in termOutput:
            # print("item: ",item)
         itemList = item.split(" ")
@@ -78,21 +80,27 @@ for d in dirlist:
                 checkifdir = termOutput[myindex].split(" ")
                 if checkifdir[0]== 'dir':
                     #print("add it")
-                    total += dirdict[checkifdir[1]]
+                    if checkifdir[1] not in total:
+                        total.append(checkifdir[1])
+                        total1 += dirdict[checkifdir[1]]
                     #print(total)
                 if termOutput[myindex] == "eof":
                     break
                 myindex+=1
 
-    collapseTotals.append(total)
+    collapseTotals.append(total1)
+    collapse.append(total)
 
-    
+print("collapse", collapse)   
 print(collapseTotals) 
 
 
 sum =0
 for n in collapseTotals:
-    if n < 100000:
-        sum+= n
+    if n <= 100000:
+        sum+=n
+        
+
+
 print(sum)
 
