@@ -17,3 +17,4 @@ really hacky solutions in python
 
 - [X] day five -- made something like a simple interpreter to execute movement commands on 2d stacks of boxes, nested lists as stacks.
 - [X] day six -- used set() to check for no repeats in a list - of 4 or 14 characters in another list of characters 
+- [F] day seven -- really bad fail, got it to work on sample data but not on input. did not take into account the relative directory names the tree (it would over count) 
