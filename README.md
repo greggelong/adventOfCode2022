@@ -19,4 +19,4 @@ really hacky solutions in python
 - [X] day six -- used set() to check for no repeats in a list - of 4 or 14 characters in another list of characters 
 - [ ] FAIL  day seven -- really bad fail on my own. Got it to work on example input  data but not on the full input data. did not take into account the relative directory names  and a recursive file tree the (it would over count).  Got it to work using a stack for recursive summing. But I went to the reddit for help :(
 
-day seven felt really hard.
+- [X] day eight -- sparked some joy. The challenge was well suited for a graphic visualization and decided to solve it in JavaScrip with p5 library. 
