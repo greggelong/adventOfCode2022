@@ -5,7 +5,7 @@
 
 localpath="C:/Users/gkrei/Documents/adventOfCode2022/day7"
 
-with open(localpath+'/data.txt') as f:
+with open(localpath+'/sdata.txt') as f:
     dtermOutput= f.readlines()
 
 termOutput = [item.rstrip('\n') for item in dtermOutput]
@@ -20,6 +20,8 @@ stack = []
 sizes = []
 
 def up():
+    print("size", sizes)
+    print("stack", stack)
     sizes.append(stack.pop(-1))
     if stack:
         stack[-1] += sizes[-1]
