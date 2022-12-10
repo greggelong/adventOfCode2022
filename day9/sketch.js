@@ -2,11 +2,11 @@
 
 let result;
 function preload() {
-  result = loadStrings('sdata.txt');
+  result = loadStrings('data.txt');
 }
 
 // for full data sz =1 for sdata sz =10
-sz = 10;
+sz = 1;
 let head;
 let tail;
 let hMove = []
@@ -24,13 +24,13 @@ function setup(){
   }
   head = createVector(int(60/sz), int(height/(2*sz)))
   tail =  createVector(int(60/sz), int(height/(2*sz)))
-  frameRate(1)
+  //frameRate(1)
   noStroke();
   print(hMove, head, tail)
 }
 
 function draw(){
-  background(0,0,255)
+  //background(0,0,255)
   showHead()
   moveHead()
   
