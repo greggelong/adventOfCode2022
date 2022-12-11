@@ -38,14 +38,18 @@ class Monkey:
 
 
 
-m0= Monkey(0,[79,98],"old * 19",23,2,3)
-m1= Monkey(1,[54,65,75,74],"old +6",19,2,0)
-m2= Monkey(2,[79,60,97],"old * old",13,1,3)
-m3= Monkey(3,[74],"old + 3",17,0,1)
+m0= Monkey(0,[52,60,85,69,75,75],"old * 17",13,6,7)
+m1= Monkey(1,[96,82,61,99,82,84,85],"old + 8",7,0,7)
+m2= Monkey(2,[95,79],"old + 6",19,5,3)
+m3= Monkey(3,[88,50,82,65,77],"old * 19",2,4,1)
+m4= Monkey(4,[66,90,59,90,87,63,53,88],"old +7",5,1,0)
+m5= Monkey(5,[92,75,62],"old * old",3,3,4)
+m6= Monkey(6,[94,86,76,67],"old + 1",11,5,2)
+m7= Monkey(7,[57],"old + 2",17,6,2)
 
-mlist =[m0,m1,m2,m3]
+mlist =[m0,m1,m2,m3,m4,m5, m6, m7]
 
-monkeyInspectedItems =[0,0,0,0]
+monkeyInspectedItems =[0,0,0,0,0,0,0,0]
 
 for i in range(20):
     print(i)
