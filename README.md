@@ -26,3 +26,9 @@ see it here
 https://greggelong.github.io/adventOfCode2022/day8/day8js/index
 
 - [X] day nine part one only -- solved by graphing head and tail movements using  p5 vectors then getting an array of all the tail movements and using the new javaScript set to get rid of duplicates.  a covid headache is keeping me from solving the longer tail of part two and constant vpn problems in Beijing have made updating repos super hard. I cant even check my gmail account
+
+
+- [X]  day 10 part 1 only, should be able to do part 2 with some string manipulation
+
+- [X] day 11 part 1, first time doing some oop. Made a monkey class with data and turn methods then ran initialized all the monkeys and ran twenty rounds.
+
