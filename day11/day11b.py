@@ -1,3 +1,7 @@
+import math
+
+
+
 class Monkey:
     def __init__(self, name,items, opert,test,iftrue,iffalse):
         self.name = name
@@ -21,15 +25,16 @@ class Monkey:
             #print("list size", len(self.items))
             old = self.items.pop(0)
             new  = eval(self.opert) 
+            #print(i,old,new)
             #print(i, old)
             #print("eval: ",new)
-            #new = int(new/3)
+            #new = math.floor(new/1)
             #print("divide by 3", new)
             if new%self.test == 0:
-                mlist[self.iftrue].items.append(new)
+                mtlist[self.iftrue].items.append(new)         #n need to change list here too
                 #print("throw to monkey ", self.iftrue)
             else:
-                mlist[self.iffalse].items.append(new)
+                mtlist[self.iffalse].items.append(new)
                 #print("throw to monkey ", self.iffalse)
             i+=1
             #print(len(self.items))
@@ -49,17 +54,25 @@ m7= Monkey(7,[57],"old + 2",17,6,2)
 
 mlist =[m0,m1,m2,m3,m4,m5, m6, m7]
 
+mt0= Monkey(0,[79,98],"old * 19",23,2,3)
+mt1= Monkey(1,[54,65,75,74],"old + 6",19,2,0)
+mt2= Monkey(2,[79,60,97],"old * old",13,1,3)
+mt3= Monkey(3,[74],"old +3",17,0,1)
+
+mtlist =[mt0,mt1,mt2,mt3]
+
 monkeyInspectedItems =[0,0,0,0,0,0,0,0]
 
 for i in range(10000):
     print(i)
-    for m in mlist:
+    for m in mtlist:
         m.turn()
 
 
-for m in mlist:
+for m in mtlist:
     print(m)
 
 print(monkeyInspectedItems)
 monkeyInspectedItems.sort(reverse=True)
+print(monkeyInspectedItems)
 print(monkeyInspectedItems[0]*monkeyInspectedItems[1])
