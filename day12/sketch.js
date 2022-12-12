@@ -44,3 +44,18 @@ function showgrid(){
     }
 }
 }
+
+
+/*
+bfs(start vertex, goal vertex)
+make frontier an empty queue
+enqueue start onto frontier
+until frontier is empty
+    dequeue parent off frontier
+    for each undiscovered child of parent
+	enqueue child onto frontier
+	stop if child is the goal
+
+
+
+*/
