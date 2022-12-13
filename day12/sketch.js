@@ -8,7 +8,7 @@ function preload() {
 
 let grid =[]
 
-
+let alphaHeight =['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
 
 let sz =10
@@ -20,17 +20,23 @@ function setup(){
   // create grid
 
   
-
+  
   for(let j = 0; j<result.length; j++){
-    grid[j] = result[j].split('')
+    grid[j]=[]
+    row = result[j].split('')
+    for(let i =0; i<row.length;i++){
+      myh = alphaHeight.indexOf(row[i])
+      grid[j][i] = new Cell(i,j,myh, row[i])
+    }
     
   }
 
-
-print(grid)
-print(grid[0][0])
-console.table(grid)
-showgrid()
+  
+  print(grid)
+  print(grid[0][0])
+  console.table(grid)
+  showgrid()
+  connect()
 }
 
 
@@ -40,10 +46,22 @@ function showgrid(){
     for(let x =0; x<grid[y].length; x++){
       fill(0,255,0)
       noStroke()
-      text(grid[y][x],x*sz,y*sz)
+      text(grid[y][x].l,x*sz,y*sz)
     }
 }
 }
+
+
+
+function connect(){
+  for(let j =0; j<grid.length; j++){
+    for(let i =0; i<grid[j].length; i++){
+      grid[j][i].getconnected();
+    }
+  }
+}
+
+
 
 
 /*
