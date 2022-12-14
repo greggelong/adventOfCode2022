@@ -7,7 +7,8 @@ function preload() {
 
 
 let grid =[]
-
+let start;
+let finish;
 let alphaHeight =['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
 
@@ -36,7 +37,37 @@ function setup(){
   print(grid[0][0])
   console.table(grid)
   showgrid()
+  // connect the grid neighbors 
   connect()
+  bfs()
+  print("did it finish")
+
+  // bfs( ) yes it finished
+  // yes it found a path
+
+  // get the path using parents
+
+  let path =[]
+  let end = grid[20][145]
+  path.push(end) // path push finish
+  let next = end.parent;
+  while(next!= null){
+    path.push(next);
+    next = next.parent
+  }
+
+  print(path)
+  print(path.length)
+
+  fill(255,0,0)
+  for(let i = 0; i<path.length;i++){
+    rect(path[i].x*sz,path[i].y*sz,sz,sz)
+  }
+
+
+
+
+  
 }
 
 
@@ -54,6 +85,10 @@ function showgrid(){
 
 
 function connect(){
+  //before connecting make sure that the hight of start and finish 
+  grid[20][0].h =0
+  grid[20][145].h =25
+  // using the class connect all traversable neighbors
   for(let j =0; j<grid.length; j++){
     for(let i =0; i<grid[j].length; i++){
       grid[j][i].getconnected();
@@ -61,8 +96,87 @@ function connect(){
   }
 }
 
+/*
+Breadth-First-Search(Graph, root):
 
 
+    for each node n in Graph:            
+
+        n.distance = INFINITY        
+
+        n.parent = NIL
+
+
+    create empty queue Q      
+
+
+    root.distance = 0
+
+    Q.enqueue(root)                      
+
+
+    while Q is not empty:        
+
+    
+
+        current = Q.dequeue()
+
+    
+
+        for each node n that is adjacent to current:
+
+            if n.distance == INFINITY:
+
+                n.distance = current.distance + 1
+
+                n.parent = current
+
+                Q.enqueue(n)
+
+*/
+
+function bfs(){
+  start = grid[20][0];
+  print(start.l)
+  finish= grid[20][145];
+  print(finish.l)
+
+  let q =[] ; // q.push() to enqueue (go in the back of the line) and q.shift() to dequeue (leave from the front of line) fifo
+
+  // set start to visited
+  start.visited = true
+  // put start on the q
+  q.push(start)
+
+  while (q.length>0){  // while q is not zero
+    let current = q.shift()  // dequeue 
+    print(current.l)
+    rect(current.x*sz,current.y*sz,sz,sz)
+    if (current === finish){
+      // break
+      print("found a path to finish")
+      break;
+    }else{
+      // else add neighbors
+      let neighList = current.connected
+      for (let i =0; i<neighList.length; i++){
+        let neighbor = neighList[i]
+        if(neighbor.visited === false){
+          neighbor.visited = true
+          //set neighbor parent to current
+          neighbor.parent = current;
+          
+          q.push(neighbor)
+        }
+      }
+    }
+
+
+
+  }
+
+
+}
 
 /*
 bfs(start vertex, goal vertex)
