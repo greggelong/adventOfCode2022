@@ -32,7 +32,12 @@ https://greggelong.github.io/adventOfCode2022/day8/day8js/index
 
 - [X] day 11 part 1, first time doing some oop. Made a monkey class with data and turn methods then ran initialized all the monkeys and ran twenty rounds.
 
-- [ ]  day 12 and on, working slowly on this one which requires finding a shortest path, so needed to review breadth first search algorithms, which is extra hard without vpn in China now.  I watched a MIT lecture from the AI class on and reread groking algorithms chapter.  But much more than than I needed to create a Cell class with to hold data like was visited, height and connections.  I made a simple connection method, and all of the things seem to be connected to each other.  Tomorrow I will make a seeker class to and make the seeker find the shortest path.  I am sure this could have been done in a less complicated way. but I really needed to use classes to solve this one.  but as I am also visualizing this, the whole thing becomes more like making a game than writing a script to solve a problem. 
+- [X]  day 12 part 1, working slowly on this one which requires finding a shortest path, so needed to review breadth first search algorithms, which is extra hard without vpn in China now.  I watched a MIT lecture from https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-4-search-depth-first-hill-climbing-beam/ and reread Grokking algorithms chapter. Also watched the Coding Train coding challenge 68, on billibilli.  and followed the https://infogalactic.com/info/Breadth-first_search  as I cannot use Wiki in china at the moment.
+
+ But much more than than I needed to create a Cell class with to hold data like was visited, height and connections.  I made a simple connection method, and all of the things seem to be connected to each other.  however I needed to change how the connections are made. The key was you are connected to any square your height +1 or lower.  I had miss read thinking you are connected if you are same or one height level different. 
+ Then I followed the bfs algorithm and got a list of steps
+
+I am sure this could have been done in a less complicated way. but I really needed to use classes to solve this one.  but as I am also visualizing this, the whole thing becomes more like making a game than writing a script to solve a problem. 
 
 
 
