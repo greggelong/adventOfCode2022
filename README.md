@@ -40,4 +40,4 @@ https://greggelong.github.io/adventOfCode2022/day8/day8js/index
 I am sure this could have been done in a less complicated way. but I really needed to use classes to solve this one.  but as I am also visualizing this, the whole thing becomes more like making a game than writing a script to solve a problem. 
 
 
-
+https://greggelong.github.io/adventOfCode2022/day12/index
