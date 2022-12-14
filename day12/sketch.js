@@ -17,7 +17,7 @@ function setup(){
   createCanvas(1680, 410);
 
   background(0)
-
+  textAlign(LEFT,TOP)
   // create grid
 
   
@@ -59,7 +59,7 @@ function setup(){
   print(path)
   print(path.length)
 
-  fill(255,0,0)
+  fill(255,0,0,120)
   for(let i = 0; i<path.length;i++){
     rect(path[i].x*sz,path[i].y*sz,sz,sz)
   }
@@ -151,6 +151,7 @@ function bfs(){
   while (q.length>0){  // while q is not zero
     let current = q.shift()  // dequeue 
     print(current.l)
+    fill(255,255,0,80)
     rect(current.x*sz,current.y*sz,sz,sz)
     if (current === finish){
       // break
